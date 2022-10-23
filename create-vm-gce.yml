@@ -1,0 +1,7 @@
+---
+# Playbook to create GCE Virtual Machine
+
+- name: Create a GCE VM
+  gather_facts: false
+  roles:
+      - gce_create_vm
