@@ -1,3 +1,11 @@
 ---
 # Playbook to deploy Ghost and its components
 # TO DO
+
+
+
+#Lembrete!!!!!
+#Criar administrador com as seguintes credenciais quando se faz uma instalação nova:
+#Nome: ascn
+#Palavra-passe: ascn123
+#Email: ascn@example.com
