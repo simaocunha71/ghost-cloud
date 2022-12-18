@@ -26,9 +26,9 @@ spec:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
           value: "true"
         - name: MYSQL_DATABASE
-          value: swap
+          value: ghost
         - name: MYSQL_USER
-          value: swapuser
+          value: ghost_user
         - name: MYSQL_PASSWORD
           value: "123456" # Use Secret object in real usage
         ports:

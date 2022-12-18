@@ -8,3 +8,12 @@ Grupo 21
 * Gonçalo Pereira (a93168)
 * Hugo Fernandes (pg50419)
  
+Comandos Ansible:
+* Criação do cluster GKE
+```
+ansible-playbook create-gke-cluster.yml -i inventory/gcp.yml
+```
+* Destruição do cluster GKE
+```
+ansible-playbook destroy-gke-cluster.yml -i inventory/gcp.yml
+```
