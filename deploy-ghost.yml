@@ -7,6 +7,7 @@
   gather_facts: false
   roles:
       - ghost_app/deploy-ghost
+      - ghost_db/XXX
 
 
 #Lembrete!!!!!

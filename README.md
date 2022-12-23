@@ -17,3 +17,10 @@ ansible-playbook create-gke-cluster.yml -i inventory/gcp.yml
 ```
 ansible-playbook destroy-gke-cluster.yml -i inventory/gcp.yml
 ```
+* Aceder ao cluster no terminal
+```
+gcloud container clusters get-credentials ascn-cluster --zone europe-west1-b --project ascn-grupo21
+```
+```
+kubectl get all
+```
