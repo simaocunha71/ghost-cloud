@@ -2,7 +2,7 @@
 
 - name: Create Google Kubernetes Engine Cluster
   gcp_container_cluster:
-    name: ascn-cluster
+    name: "{{ gke_namespace }}"
     initial_node_count: "{{ gcp_initial_node_count }}"
     node_config:
       machine_type: "{{ gcp_machine_type }}"
