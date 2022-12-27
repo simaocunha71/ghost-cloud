@@ -22,6 +22,9 @@
     namespace: ascn-cluster
     name: mysql-service
     state: absent
+    wait: true
+
+
 
 - name: Undeploy MySQL Deployment
   k8s:
@@ -30,7 +33,9 @@
     namespace: ascn-cluster
     name: "{{ mysql_deploy.resources[0].metadata.name  }}"
     state: absent
+    wait: true
   when: mysql_deploy.resources[0] is defined
+
 
 - name: Undeploy Ghost service
   k8s:
@@ -40,6 +45,9 @@
     name: ghost-service
     state: absent
     continue_on_error: yes
+    wait: true
+
+
 
 - name: Undeploy Ghost Deployment
   k8s:
@@ -48,4 +56,18 @@
     namespace: ascn-cluster
     name: "{{ ghost_deploy.resources[0].metadata.name }}"
     state: absent
+    wait: true
   when: ghost_deploy.resources[0] is defined
+
+
+
+
+- name: delete persistent data
+  k8s:
+    api_version: v1
+    kind: PersistentVolumeClaim
+    namespace: ascn-cluster
+    name: mysql-pv-claim
+    state: absent
+    wait: true
+  when : delete_data is defined and {{delete_data}}==true

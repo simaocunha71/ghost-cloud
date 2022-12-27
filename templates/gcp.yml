@@ -17,9 +17,9 @@ all:
   gke_namespace: ascn-cluster   #Namespace of project
 
   # APP variables
-  ghost_ip: 34.170.77.75   # Needs to be updated
+  ghost_ip: {{ new_ghost_ip }}   # Needs to be updated
   ghost_port: 2368         # Needs to be updated
-  ghost_url: https://34.170.77.75:2368
+  ghost_url: https://{{ new_ghost_ip }}:2368
 
   # Additional variables
   # ...

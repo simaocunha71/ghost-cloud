@@ -4,6 +4,7 @@
   kubernetes.core.k8s:
       state: present
       src: kubernets/mysql-create_pvc.yml
+      wait: true
 
 - name: Claim pvc 
   kubernetes.core.k8s:
@@ -18,9 +19,11 @@
   kubernetes.core.k8s:
     state: present
     src: kubernets/mysql-deployment.yaml
+    wait: true
 
 
 - name: Expose MySQL service
   kubernetes.core.k8s:
     state: present
     src: kubernets/mysql-service.yaml
+    wait: true

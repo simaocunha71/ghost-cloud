@@ -4,30 +4,72 @@
   kubernetes.core.k8s:
     state: present
     src: kubernets/ghost-deployment.yml
+    wait: true
+
+  
 
 - name: Expose Ghost service
   kubernetes.core.k8s:
     state: present
     src: kubernets/ghost-service.yml
+    wait: true
+
+
 
 - name: Get MySQL Pod Name
   kubernetes.core.k8s_info:
     kind: Pod
     label_selectors:
       - app = mysql
+    wait: true
   register: mysql_pod
 
 
-# - name: Update/Create Admin in MySQL
-#   kubernetes.core.k8s_exec:
-#     namespace: ascn-cluster
-#     pod: "{{ mysql_pod.resources[0].metadata.name }}"
-#     container: mysql
-#     command: mysql --user=ghost_user --password=123456 --database=ghost --execute="update user set name='ascn', password='\$2b\$10\$wV0KWzGAq0Zlgn7lByB4Be.0LEKfN0y3MWuzKefw3V/LG7C9NwxL.', email='ascn@example.com', status='active' where id=1;"
-#   register: update_admin
-#   until: "update_admin is not failed"
-#   retries: 0
-#   delay: 5
+- name: Update/Create Admin in MySQL
+  kubernetes.core.k8s_exec:
+    namespace: ascn-cluster
+    pod: "{{ mysql_pod.resources[0].metadata.name }}"
+    container: mysql
+    command: mysql --user=ghost-user --password=password --database=ghost --execute="update users set name='ascn', password='$2b$10$0ruNjdRRsyAqrxpb5cGi7Oj4IOzW6MqKluXS8n0H7.DPmrJIHW2Au', email='ascn@example.com', status='active' where id=1;"
+  register: result
+  until: "result is not failed"
+  retries: 10 #tabelas podem ainda estar a ser criadas 
+  delay: 10
 
+
+- name: Get Ghost Service
+  kubernetes.core.k8s_info:
+    kind: Service
+    label_selectors:
+      - app = ghost
+  register: ghost_service
+  until: "ghost_service.resources[0].status.loadBalancer.ingress is defined"
+  retries: 10 #tabelas podem ainda estar a ser criadas 
+  delay: 10
+
+
+- name: Extract Ghost IP
+  set_fact:
+    new_ghost_ip: "{{ ghost_service.resources[0].status.loadBalancer.ingress[0].ip }}"
+
+- name: Make new url
+  set_fact:
+    ghost_url: http://{{new_ghost_ip}}:{{ghost_port}}
     
+
+- name: Update ghost_ip and ghost_url on inventory
+  template: src=templates/gcp.yml dest=inventory/gcp.yml
+
+- name: Update ghost-deployment
+  template: src=templates/ghost-deployment.yml dest=roles/ghost_app/deploy-ghost/kubernets/ghost-deployment.yml
+
+
+- name: Update Ghost
+  kubernetes.core.k8s:
+    state: present
+    src: kubernets/ghost-deployment.yml
+    wait: true
+
+
+
 
