@@ -13,5 +13,5 @@ spec:
   selector:
     app: mysql
   ports:
-    - targetPort: 4000 # port that containers are listening on
-      port: 4000 # port number exposed internally in the cluster
+    - targetPort: 8000 # port that containers are listening on
+      port: 8000 # port number exposed internally in the cluster

@@ -1,0 +1,51 @@
+---
+- name: Get MySQL Deployment Name
+  kubernetes.core.k8s_info:
+    kind: Deployment
+    label_selectors:
+      - app = mysql
+  register: mysql_deploy
+
+
+- name: Get Ghost Deployment Name
+  kubernetes.core.k8s_info:
+    kind: Deployment
+    label_selectors:
+      - app = ghost
+  register: ghost_deploy
+
+
+- name: Undeploy MySQL service
+  k8s:
+    api_version: v1
+    kind: Service
+    namespace: ascn-cluster
+    name: mysql-service
+    state: absent
+
+- name: Undeploy MySQL
+  k8s:
+    api_version: v1
+    kind: Deployment
+    namespace: ascn-cluster
+    name: "{{ mysql_deploy.resources[0].metadata.name  }}"
+    state: absent
+  when: mysql_deploy.resources[0] is defined
+
+- name: Undeploy Ghost service
+  k8s:
+    api_version: v1
+    kind: Service
+    namespace: ascn-cluster
+    name: ghost-service
+    state: absent
+    continue_on_error: yes
+
+- name: Undeploy Ghost
+  k8s:
+    api_version: v1
+    kind: Deployment
+    namespace: ascn-cluster
+    name: "{{ ghost_deploy.resources[0].metadata.name }}"
+    state: absent
+  when: ghost_deploy.resources[0] is defined

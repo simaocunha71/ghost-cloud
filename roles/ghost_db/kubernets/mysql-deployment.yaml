@@ -29,11 +29,11 @@ spec:
         - name: MYSQL_DATABASE
           value: ghost
         - name: MYSQL_USER
-          value: ghostuser
+          value: ghost-user
         - name: MYSQL_PASSWORD
           value: "123456" # Use Secret object in real usage
         ports:
-        - containerPort: 4000
+        - containerPort: 8000
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql

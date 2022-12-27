@@ -27,14 +27,14 @@ spec:
         - name: database__connection__database 
           value: ghost
         - name: database__connection__user
-          value: ghostuser
+          value: ghost-user
         - name: database__connection__password
           value: "123456"
         - name: database__connection__host
           value: mysql-service 
         - name: url 
-          value: "{{ ghost_url }}"
+          value: "http://my-ghost-blog.com"
         ports:
-        - containerPort: 5213
+        - containerPort: 9000
   
 

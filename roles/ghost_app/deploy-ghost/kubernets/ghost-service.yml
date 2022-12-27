@@ -12,6 +12,6 @@ spec:
   selector:
     app: ghost
   ports:
-    - targetPort: 5213 # port that containers are listening on
-      port: 5213 # port number exposed internally in the cluster
+    - targetPort: 9000 # port that containers are listening on
+      port: 9000 # port number exposed internally in the cluster
       nodePort: 30007 # a static port assigned on each the node
