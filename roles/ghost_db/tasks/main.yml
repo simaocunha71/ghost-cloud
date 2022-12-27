@@ -1,6 +1,6 @@
 ---
 
-- name: Create persistent storage volume
+- name: Create storage class
   kubernetes.core.k8s:
       state: present
       src: kubernets/mysql-create_pvc.yml
@@ -9,7 +9,10 @@
   kubernetes.core.k8s:
     state: present
     src: kubernets/mysql-pvc.yaml
-
+  register: claim
+  until: "claim.result.status.phase!='pending'"
+  retries: 10
+  delay: 2
 
 - name: Deploy MySQL
   kubernetes.core.k8s:

@@ -23,7 +23,7 @@
     name: mysql-service
     state: absent
 
-- name: Undeploy MySQL
+- name: Undeploy MySQL Deployment
   k8s:
     api_version: v1
     kind: Deployment
@@ -41,7 +41,7 @@
     state: absent
     continue_on_error: yes
 
-- name: Undeploy Ghost
+- name: Undeploy Ghost Deployment
   k8s:
     api_version: v1
     kind: Deployment
