@@ -4,10 +4,11 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
-  namespace: "{{ gke_namespace }}"
+  namespace: ascn-cluster
 spec:
   accessModes:
     - ReadWriteOnce
+  volumeMode: Filesystem
   storageClassName: local-storage
   resources:
     requests:

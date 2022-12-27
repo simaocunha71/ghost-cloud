@@ -1,17 +1,17 @@
 ---
-# Service for exposing MySQL - ADAPTAR
+# Service for exposing MySQL
 apiVersion: v1
 kind: Service
 metadata:
   name: mysql-service # logical name of the service, which will also become the DNS name of the service when it is created.
-  namespace: "{{ gke_namespace }}"
+  namespace: ascn-cluster
   labels:
     app: mysql
     tier: database
 spec:
-  type: ClusterIP
+  type: ClusterIP # apenas disponivel dentro do cluster
   selector:
     app: mysql
   ports:
-    - targetPort: 3306 # port that containers are listening on
-      port: 3306 # port number exposed internally in the cluster
+    - targetPort: 4000 # port that containers are listening on
+      port: 4000 # port number exposed internally in the cluster

@@ -1,1 +1,33 @@
 #https://ghost.org/docs/ghost-cli/
+---
+- name: Deploy Ghost
+  kubernetes.core.k8s:
+    state: present
+    src: kubernets/ghost-deployment.yml
+
+- name: Expose Ghost service
+  kubernetes.core.k8s:
+    state: present
+    src: kubernets/ghost-service.yml
+
+- name: Get MySQL Pod Name
+  kubernetes.core.k8s_info:
+    kind: Pod
+    label_selectors:
+      - app = mysql
+  register: mysql_pod
+
+
+# - name: Update/Create Admin in MySQL
+#   kubernetes.core.k8s_exec:
+#     namespace: ascn-cluster
+#     pod: "{{ mysql_pod.resources[0].metadata.name }}"
+#     container: mysql
+#     command: mysql --user=ghost_user --password=123456 --database=ghost --execute="update user set name='ascn', password='\$2b\$10\$wV0KWzGAq0Zlgn7lByB4Be.0LEKfN0y3MWuzKefw3V/LG7C9NwxL.', email='ascn@example.com', status='active' where id=1;"
+#   register: update_admin
+#   until: "update_admin is not failed"
+#   retries: 0
+#   delay: 5
+
+    
+

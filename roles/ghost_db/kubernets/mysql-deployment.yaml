@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql-deployment
-  namespace: "{{ gke_namespace }}"
+  namespace: ascn-cluster
   labels:
     app: mysql
     tier: database
@@ -29,11 +29,11 @@ spec:
         - name: MYSQL_DATABASE
           value: ghost
         - name: MYSQL_USER
-          value: ghost_user
+          value: ghostuser
         - name: MYSQL_PASSWORD
           value: "123456" # Use Secret object in real usage
         ports:
-        - containerPort: 3306
+        - containerPort: 4000
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql

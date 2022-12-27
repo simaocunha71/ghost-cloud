@@ -1,13 +1,23 @@
----
+- name: Create namespace
+  hosts: localhost
+  gather_facts: false
+  roles:
+      - k8/namespace
+
+
 # Playbook to deploy Ghost and its components
 # TO DO
+- name: Create SQL database
+  hosts: localhost
+  gather_facts: false
+  roles:
+    - ghost_db
 
 - name: Deploy Ghost Application
   hosts: localhost
   gather_facts: false
   roles:
       - ghost_app/deploy-ghost
-      - ghost_db/XXX
 
 
 #Lembrete!!!!!

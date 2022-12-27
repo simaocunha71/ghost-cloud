@@ -1,0 +1,17 @@
+---
+# Service for exposing ghost
+apiVersion: v1
+kind: Service
+metadata:
+  name: ghost-service 
+  namespace: ascn-cluster
+  labels:
+    app: ghost
+spec:
+  type: LoadBalancer
+  selector:
+    app: ghost
+  ports:
+    - targetPort: 5213 # port that containers are listening on
+      port: 5213 # port number exposed internally in the cluster
+      nodePort: 30007 # a static port assigned on each the node

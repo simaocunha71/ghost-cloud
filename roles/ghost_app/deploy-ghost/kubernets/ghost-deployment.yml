@@ -1,0 +1,40 @@
+#https://ghost.org/docs/ghost-cli/
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghost-deployment
+  namespace: ascn-cluster
+  labels:
+    app: ghost
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ghost
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: ghost
+    spec:
+      containers:
+      - name: ghost
+        image: ghost:5.14.1
+        env: # The variables below could be set on a ConfigMap object
+        - name: database__connection__database 
+          value: ghost
+        - name: database__connection__user
+          value: ghostuser
+        - name: database__connection__password
+          value: "123456"
+        - name: database__connection__host
+          value: mysql-service 
+        - name: url 
+          value: "{{ ghost_url }}"
+        ports:
+        - containerPort: 5213
+  
+
