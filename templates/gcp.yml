@@ -18,8 +18,8 @@ all:
 
   # APP variables
   ghost_ip: {{ new_ghost_ip }}   # Needs to be updated
-  ghost_port: 2368         # Needs to be updated
-  ghost_url: https://{{ new_ghost_ip }}:2368
+  ghost_port: 80         # Needs to be updated
+  ghost_url: https://{{ new_ghost_ip }}:80
 
   # Additional variables
   # ...

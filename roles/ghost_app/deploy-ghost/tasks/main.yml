@@ -44,7 +44,7 @@
       - app = ghost
   register: ghost_service
   until: "ghost_service.resources[0].status.loadBalancer.ingress is defined"
-  retries: 10 #tabelas podem ainda estar a ser criadas 
+  retries: 10
   delay: 10
 
 

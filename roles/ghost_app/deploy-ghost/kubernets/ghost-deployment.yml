@@ -33,7 +33,7 @@ spec:
         - name: database__connection__host
           value: mysql-service 
         - name: url 
-          value: http://34.170.77.75:2368
+          value: http://146.148.86.138:80
         ports:
         - containerPort: 2368
   
