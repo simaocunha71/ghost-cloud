@@ -24,13 +24,24 @@
     wait: true
   register: mysql_pod
 
+- name: Wait for users table to be created
+  kubernetes.core.k8s_exec:
+    namespace: ascn-cluster
+    pod: "{{ mysql_pod.resources[0].metadata.name }}"
+    container: mysql
+    command: mysql --user=ghost-user --password=password --database=ghost -t --execute="select * from users"
+  register: result
+  until: "result.stdout != ''"
+  retries: 10 #tabelas podem ainda estar a ser criadas 
+  delay: 10
+
 
 - name: Update/Create Admin in MySQL
   kubernetes.core.k8s_exec:
     namespace: ascn-cluster
     pod: "{{ mysql_pod.resources[0].metadata.name }}"
     container: mysql
-    command: mysql --user=ghost-user --password=password --database=ghost --execute="update users set name='ascn', password='$2b$10$0ruNjdRRsyAqrxpb5cGi7Oj4IOzW6MqKluXS8n0H7.DPmrJIHW2Au', email='ascn@example.com', status='active' where id=1;"
+    command: mysql --user=ghost-user --password=password -t --database=ghost --execute="update users set name='ascn', password='$2b$10$0ruNjdRRsyAqrxpb5cGi7Oj4IOzW6MqKluXS8n0H7.DPmrJIHW2Au', email='ascn@example.com', status='active' where id=1;"
   register: result
   until: "result is not failed"
   retries: 10 #tabelas podem ainda estar a ser criadas 
