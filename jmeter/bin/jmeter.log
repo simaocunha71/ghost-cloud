@@ -1,0 +1,61 @@
+2023-01-06 18:38:10,268 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2023-01-06 18:38:10,318 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2023-01-06 18:38:10,333 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2023-01-06 18:38:10,340 INFO o.a.j.JMeter: Copyright (c) 1998-2022 The Apache Software Foundation
+2023-01-06 18:38:10,341 INFO o.a.j.JMeter: Version 5.5
+2023-01-06 18:38:10,341 INFO o.a.j.JMeter: java.version=11.0.17
+2023-01-06 18:38:10,342 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2023-01-06 18:38:10,343 INFO o.a.j.JMeter: os.name=Linux
+2023-01-06 18:38:10,343 INFO o.a.j.JMeter: os.arch=amd64
+2023-01-06 18:38:10,344 INFO o.a.j.JMeter: os.version=5.15.79.1-microsoft-standard-WSL2
+2023-01-06 18:38:10,345 INFO o.a.j.JMeter: file.encoding=UTF-8
+2023-01-06 18:38:10,346 INFO o.a.j.JMeter: java.awt.headless=null
+2023-01-06 18:38:10,346 INFO o.a.j.JMeter: Max memory     =1073741824
+2023-01-06 18:38:10,347 INFO o.a.j.JMeter: Available Processors =8
+2023-01-06 18:38:10,353 INFO o.a.j.JMeter: Default Locale=English (EN)
+2023-01-06 18:38:10,354 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2023-01-06 18:38:10,355 INFO o.a.j.JMeter: JMeterHome=/mnt/d/uni/4ano/ASCN/projeto/ghost-cloud/jmeter
+2023-01-06 18:38:10,356 INFO o.a.j.JMeter: user.dir  =/mnt/d/uni/4ano/ASCN/projeto/ghost-cloud/jmeter/bin
+2023-01-06 18:38:10,360 INFO o.a.j.JMeter: PWD       =/mnt/d/uni/4ano/ASCN/projeto/ghost-cloud/jmeter/bin
+2023-01-06 18:38:10,361 INFO o.a.j.JMeter: IP: 127.0.1.1 Name: DESKTOP-VR2PTU2 FullName: DESKTOP-VR2PTU2.
+2023-01-06 18:38:10,367 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2023-01-06 18:38:10,838 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2023-01-06 18:39:22,592 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-01-06 18:39:22,599 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2023-01-06 18:39:22,600 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2023-01-06 18:39:22,603 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2023-01-06 18:39:22,604 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2023-01-06 18:39:22,921 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-01-06 18:39:22,957 INFO o.a.j.e.StandardJMeterEngine: No enabled thread groups found
+2023-01-06 18:39:22,958 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-01-06 18:39:22,960 INFO o.a.j.s.FileServer: Default base='/mnt/d/uni/4ano/ASCN/projeto/ghost-cloud/jmeter/bin'
+2023-01-06 18:39:22,961 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-01-06 18:39:28,365 INFO o.a.j.g.JMeterUIDefaults: Applying font scale factor: 1.1
+2023-01-06 18:39:36,372 INFO o.a.j.g.JMeterUIDefaults: Applying font scale factor: 1.21
+2023-01-06 18:39:50,926 INFO o.a.j.g.JMeterUIDefaults: Applying font scale factor: 1.3310001
+2023-01-06 18:39:52,834 INFO o.a.j.g.JMeterUIDefaults: Applying font scale factor: 1.4641001
+2023-01-06 18:39:54,523 INFO o.a.j.g.JMeterUIDefaults: Applying font scale factor: 1.6105101
+2023-01-06 18:39:56,225 INFO o.a.j.g.JMeterUIDefaults: Applying font scale factor: 1.7715611
+2023-01-06 18:41:34,634 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-01-06 18:41:34,636 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2023-01-06 18:41:34,638 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-01-06 18:41:34,680 INFO o.a.j.e.StandardJMeterEngine: No enabled thread groups found
+2023-01-06 18:41:34,681 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-01-06 18:41:34,682 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-01-06 18:41:54,113 INFO o.a.j.s.FileServer: Set new base='/mnt/d/uni/4ano/ASCN/projeto/ghost-cloud/jmeter/testes'
+2023-01-06 18:41:54,483 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2023-01-06 18:41:54,504 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2023-01-06 18:41:54,507 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2023-01-06 18:42:28,140 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-01-06 18:42:28,141 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2023-01-06 18:42:28,143 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-01-06 18:42:28,145 INFO o.a.j.e.StandardJMeterEngine: No enabled thread groups found
+2023-01-06 18:42:28,149 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-01-06 18:42:28,150 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-01-06 18:43:05,753 INFO o.a.j.g.a.t.TemplateManager: Reading templates from: /mnt/d/uni/4ano/ASCN/projeto/ghost-cloud/jmeter/bin/templates/templates.xml
+2023-01-06 18:45:11,336 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-01-06 18:45:11,338 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2023-01-06 18:45:11,340 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-01-06 18:45:11,380 INFO o.a.j.e.StandardJMeterEngine: No enabled thread groups found
+2023-01-06 18:45:11,381 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-01-06 18:45:11,381 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)

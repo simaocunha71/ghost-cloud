@@ -81,6 +81,11 @@
     src: kubernets/ghost-deployment.yml
     wait: true
 
+- name: Create Dashboard
+  shell: "gcloud monitoring dashboards create --config-from-file=templates/Ghost_Monitor.json"
+  ignore_errors: true
+
+
 
 
 

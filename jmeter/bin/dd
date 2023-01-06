@@ -1,0 +1,191 @@
+Sorting...
+Full Text Search...
+crypto-policies/focal 20190816git-1 all
+  unify the crypto policies used by different applications and libraries
+
+default-jdk/focal 2:1.11-72 amd64
+  Standard Java or Java compatible Development Kit
+
+default-jdk-doc/focal 2:1.11-72 amd64
+  Standard Java or Java compatible Development Kit (documentation)
+
+default-jdk-headless/focal 2:1.11-72 amd64
+  Standard Java or Java compatible Development Kit (headless)
+
+default-jre/focal 2:1.11-72 amd64
+  Standard Java or Java compatible Runtime
+
+default-jre-headless/focal 2:1.11-72 amd64
+  Standard Java or Java compatible Runtime (headless)
+
+java-package/focal 0.62 all
+  Utility for creating Java Debian packages
+
+jtreg/focal-updates,focal-security 5.1-b01-2~20.04 all
+  Regression Test Harness for the OpenJDK platform
+
+jtreg6/focal-updates,focal-security 6.1+2-0ubuntu1~20.04 all
+  Regression Test Harness for the OpenJDK platform
+
+libhsdis0-fcml/focal 1.2.0-2 amd64
+  HotSpot disassembler plugin using FCML
+
+libjax-maven-plugin/focal 0.1.8+dfsg-1 all
+  Using the xjc goal with OpenJDK 11+
+
+libreoffice/focal-updates,focal-security 1:6.4.7-0ubuntu0.20.04.6 amd64
+  office productivity suite (metapackage)
+
+openjdk-11-dbg/focal-updates,focal-security 11.0.17+8-1ubuntu2~20.04 amd64
+  Java runtime based on OpenJDK (debugging symbols)
+
+openjdk-11-demo/focal-updates,focal-security 11.0.17+8-1ubuntu2~20.04 amd64
+  Java runtime based on OpenJDK (demos and examples)
+
+openjdk-11-doc/focal-updates,focal-security 11.0.17+8-1ubuntu2~20.04 all
+  OpenJDK Development Kit (JDK) documentation
+
+openjdk-11-jdk/focal-updates,focal-security 11.0.17+8-1ubuntu2~20.04 amd64
+  OpenJDK Development Kit (JDK)
+
+openjdk-11-jdk-headless/focal-updates,focal-security 11.0.17+8-1ubuntu2~20.04 amd64
+  OpenJDK Development Kit (JDK) (headless)
+
+openjdk-11-jre/focal-updates,focal-security 11.0.17+8-1ubuntu2~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT
+
+openjdk-11-jre-dcevm/focal 11.0.3+1-1 amd64
+  Alternative VM for OpenJDK 11 with enhanced class redefinition
+
+openjdk-11-jre-headless/focal-updates,focal-security 11.0.17+8-1ubuntu2~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT (headless)
+
+openjdk-11-jre-zero/focal-updates,focal-security 11.0.17+8-1ubuntu2~20.04 amd64
+  Alternative JVM for OpenJDK, using Zero
+
+openjdk-11-source/focal-updates,focal-security 11.0.17+8-1ubuntu2~20.04 all
+  OpenJDK Development Kit (JDK) source files
+
+openjdk-13-dbg/focal-updates 13.0.7+5-0ubuntu1~20.04 amd64
+  Java runtime based on OpenJDK (debugging symbols)
+
+openjdk-13-demo/focal-updates 13.0.7+5-0ubuntu1~20.04 amd64
+  Java runtime based on OpenJDK (demos and examples)
+
+openjdk-13-doc/focal-updates 13.0.7+5-0ubuntu1~20.04 all
+  OpenJDK Development Kit (JDK) documentation
+
+openjdk-13-jdk/focal-updates 13.0.7+5-0ubuntu1~20.04 amd64
+  OpenJDK Development Kit (JDK)
+
+openjdk-13-jdk-headless/focal-updates 13.0.7+5-0ubuntu1~20.04 amd64
+  OpenJDK Development Kit (JDK) (headless)
+
+openjdk-13-jre/focal-updates 13.0.7+5-0ubuntu1~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT
+
+openjdk-13-jre-headless/focal-updates 13.0.7+5-0ubuntu1~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT (headless)
+
+openjdk-13-jre-zero/focal-updates 13.0.7+5-0ubuntu1~20.04 amd64
+  Alternative JVM for OpenJDK, using Zero
+
+openjdk-13-source/focal-updates 13.0.7+5-0ubuntu1~20.04 all
+  OpenJDK Development Kit (JDK) source files
+
+openjdk-16-dbg/focal-updates,focal-security 16.0.1+9-1~20.04 amd64
+  Java runtime based on OpenJDK (debugging symbols)
+
+openjdk-16-demo/focal-updates,focal-security 16.0.1+9-1~20.04 amd64
+  Java runtime based on OpenJDK (demos and examples)
+
+openjdk-16-doc/focal-updates,focal-security 16.0.1+9-1~20.04 all
+  OpenJDK Development Kit (JDK) documentation
+
+openjdk-16-jdk/focal-updates,focal-security 16.0.1+9-1~20.04 amd64
+  OpenJDK Development Kit (JDK)
+
+openjdk-16-jdk-headless/focal-updates,focal-security 16.0.1+9-1~20.04 amd64
+  OpenJDK Development Kit (JDK) (headless)
+
+openjdk-16-jre/focal-updates,focal-security 16.0.1+9-1~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT
+
+openjdk-16-jre-headless/focal-updates,focal-security 16.0.1+9-1~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT (headless)
+
+openjdk-16-jre-zero/focal-updates,focal-security 16.0.1+9-1~20.04 amd64
+  Alternative JVM for OpenJDK, using Zero
+
+openjdk-16-source/focal-updates,focal-security 16.0.1+9-1~20.04 all
+  OpenJDK Development Kit (JDK) source files
+
+openjdk-17-dbg/focal-updates,focal-security 17.0.5+8-2ubuntu1~20.04 amd64
+  Java runtime based on OpenJDK (debugging symbols)
+
+openjdk-17-demo/focal-updates,focal-security 17.0.5+8-2ubuntu1~20.04 amd64
+  Java runtime based on OpenJDK (demos and examples)
+
+openjdk-17-doc/focal-updates,focal-security 17.0.5+8-2ubuntu1~20.04 all
+  OpenJDK Development Kit (JDK) documentation
+
+openjdk-17-jdk/focal-updates,focal-security 17.0.5+8-2ubuntu1~20.04 amd64
+  OpenJDK Development Kit (JDK)
+
+openjdk-17-jdk-headless/focal-updates,focal-security 17.0.5+8-2ubuntu1~20.04 amd64
+  OpenJDK Development Kit (JDK) (headless)
+
+openjdk-17-jre/focal-updates,focal-security 17.0.5+8-2ubuntu1~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT
+
+openjdk-17-jre-headless/focal-updates,focal-security 17.0.5+8-2ubuntu1~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT (headless)
+
+openjdk-17-jre-zero/focal-updates,focal-security 17.0.5+8-2ubuntu1~20.04 amd64
+  Alternative JVM for OpenJDK, using Zero
+
+openjdk-17-source/focal-updates,focal-security 17.0.5+8-2ubuntu1~20.04 all
+  OpenJDK Development Kit (JDK) source files
+
+openjdk-8-dbg/focal-updates,focal-security 8u352-ga-1~20.04 amd64
+  Java runtime based on OpenJDK (debugging symbols)
+
+openjdk-8-demo/focal-updates,focal-security 8u352-ga-1~20.04 amd64
+  Java runtime based on OpenJDK (demos and examples)
+
+openjdk-8-doc/focal-updates,focal-security 8u352-ga-1~20.04 all
+  OpenJDK Development Kit (JDK) documentation
+
+openjdk-8-jdk/focal-updates,focal-security 8u352-ga-1~20.04 amd64
+  OpenJDK Development Kit (JDK)
+
+openjdk-8-jdk-headless/focal-updates,focal-security 8u352-ga-1~20.04 amd64
+  OpenJDK Development Kit (JDK) (headless)
+
+openjdk-8-jre/focal-updates,focal-security 8u352-ga-1~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT
+
+openjdk-8-jre-headless/focal-updates,focal-security 8u352-ga-1~20.04 amd64
+  OpenJDK Java runtime, using Hotspot JIT (headless)
+
+openjdk-8-jre-zero/focal-updates,focal-security 8u352-ga-1~20.04 amd64
+  Alternative JVM for OpenJDK, using Zero/Shark
+
+openjdk-8-source/focal-updates,focal-security 8u352-ga-1~20.04 all
+  OpenJDK Development Kit (JDK) source files
+
+uwsgi-app-integration-plugins/focal 2.0.18-11ubuntu1 amd64
+  plugins for integration of uWSGI and application
+
+uwsgi-plugin-jvm-openjdk-11/focal 2.0.18-11ubuntu1 amd64
+  Java plugin for uWSGI (OpenJDK 11)
+
+uwsgi-plugin-jwsgi-openjdk-11/focal 2.0.18-11ubuntu1 amd64
+  JWSGI plugin for uWSGI (OpenJDK 11)
+
+uwsgi-plugin-ring-openjdk-11/focal 2.0.18-11ubuntu1 amd64
+  Closure/Ring plugin for uWSGI (OpenJDK 11)
+
+uwsgi-plugin-servlet-openjdk-11/focal 2.0.18-11ubuntu1 amd64
+  JWSGI plugin for uWSGI (OpenJDK 11)
+
