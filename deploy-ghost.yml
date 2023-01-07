@@ -6,7 +6,6 @@
 
 
 # Playbook to deploy Ghost and its components
-# TO DO
 - name: Create SQL database
   hosts: localhost
   gather_facts: false
@@ -20,9 +19,3 @@
       - ghost_app/deploy-ghost
 
 
-
-#Lembrete!!!!!
-#Criar administrador com as seguintes credenciais quando se faz uma instalação nova:
-#Nome: ascn
-#Palavra-passe: ascn123
-#Email: ascn@example.com

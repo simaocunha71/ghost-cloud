@@ -15,6 +15,19 @@
   retries: 10
   delay: 2
 
+- name: Get mysql secret credentials
+  shell: "gcloud secrets versions access latest --secret=mysql"
+  register: result
+
+- name: Processar secret
+  ansible.builtin.set_fact:
+    sql_user: "{{result.stdout_lines[0]}}"
+    sql_pass: "{{result.stdout_lines[1]}}"
+
+- name: Update mysql-deployment
+  template: src=templates/mysql-deployment.yaml dest=roles/ghost_db/kubernets/mysql-deployment.yaml
+
+
 - name: Deploy MySQL
   kubernetes.core.k8s:
     state: present

@@ -27,13 +27,27 @@ spec:
         - name: database__connection__database 
           value: ghost
         - name: database__connection__user
-          value: ghost-user
+          value: "{{sql_user}}"
         - name: database__connection__password
-          value: "password"
+          value: "{{sql_pass}}"
         - name: database__connection__host
           value: mysql-service 
         - name: url 
           value: {{ ghost_url }}
+        - name: mail__transport
+          value: SMTP
+        - name: mail__options__service
+          value: Mailgun
+        - name: mail__options__host
+          value: "{{mail_host}}"
+        - name: mail__options__port
+          value: "{{mail_port}}"
+        - name: mail__options__secure
+          value: "{{mail_secure|lower}}"
+        - name: mail__options__auth__user
+          value: "{{mail_user}}"
+        - name: mail__options__auth__pass
+          value: "{{mail_pass}}"
         ports:
         - containerPort: 2368
   

@@ -24,3 +24,7 @@ gcloud container clusters get-credentials ascn-cluster --zone europe-west1-b --p
 ```
 kubectl get all
 ```
+* Deploy Ghost
+```
+ansible-playbook deploy-ghost.yml -i inventory/gcp.yml -e @mail_cred.enc --ask-vault-pass
+```

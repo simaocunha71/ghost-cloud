@@ -27,13 +27,27 @@ spec:
         - name: database__connection__database 
           value: ghost
         - name: database__connection__user
-          value: ghost-user
+          value: "userexample"
         - name: database__connection__password
-          value: "password"
+          value: "passwordexample"
         - name: database__connection__host
           value: mysql-service 
         - name: url 
-          value: http://34.72.72.38:80
+          value: http://34.170.199.216:80
+        - name: mail__transport
+          value: SMTP
+        - name: mail__options__service
+          value: Mailgun
+        - name: mail__options__host
+          value: "smtp.mailtrap.io"
+        - name: mail__options__port
+          value: "465"
+        - name: mail__options__secure
+          value: "false"
+        - name: mail__options__auth__user
+          value: "eeeaa0e6c2f6b2"
+        - name: mail__options__auth__pass
+          value: "4fed9c0f437876"
         ports:
         - containerPort: 2368
   

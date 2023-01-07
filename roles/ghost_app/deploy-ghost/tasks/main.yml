@@ -1,5 +1,10 @@
 #https://ghost.org/docs/ghost-cli/
 ---
+
+- name: Update mysql-deployment mysql credentials
+  template: src=templates/ghost-deployment.yml dest=roles/ghost_app/deploy-ghost/kubernets/ghost-deployment.yml
+
+
 - name: Deploy Ghost
   kubernetes.core.k8s:
     state: present
@@ -24,12 +29,15 @@
     wait: true
   register: mysql_pod
 
+- debug:
+    var: "{{sql_user}}"
+
 - name: Wait for users table to be created
   kubernetes.core.k8s_exec:
     namespace: ascn-cluster
     pod: "{{ mysql_pod.resources[0].metadata.name }}"
     container: mysql
-    command: mysql --user=ghost-user --password=password --database=ghost -t --execute="select * from users"
+    command: mysql --user=userexample --password=passwordexample --database=ghost -t --execute="select * from users"
   register: result
   until: "result.stdout != ''"
   retries: 10 #tabelas podem ainda estar a ser criadas 
@@ -41,7 +49,7 @@
     namespace: ascn-cluster
     pod: "{{ mysql_pod.resources[0].metadata.name }}"
     container: mysql
-    command: mysql --user=ghost-user --password=password -t --database=ghost --execute="update users set name='ascn', password='$2b$10$0ruNjdRRsyAqrxpb5cGi7Oj4IOzW6MqKluXS8n0H7.DPmrJIHW2Au', email='ascn@example.com', status='active' where id=1;"
+    command: mysql --user={{sql_user}} --password={{sql_pass}} -t --database=ghost --execute="update users set name='ascn', password='$2b$10$0ruNjdRRsyAqrxpb5cGi7Oj4IOzW6MqKluXS8n0H7.DPmrJIHW2Au', email='ascn@example.com', status='active' where id=1;"
   register: result
   until: "result is not failed"
   retries: 10 #tabelas podem ainda estar a ser criadas 
@@ -81,9 +89,18 @@
     src: kubernets/ghost-deployment.yml
     wait: true
 
+- name: Check Dashboards
+  shell: 'gcloud monitoring dashboards list --filter="displayName=Ghost-Monitor"'
+  register: result
+  retries: 10
+  delay: 10
+
+
 - name: Create Dashboard
   shell: "gcloud monitoring dashboards create --config-from-file=templates/Ghost_Monitor.json"
-  ignore_errors: true
+  when: "result.stderr == 'Listed 0 items.'"
+  retries: 10
+  delay: 10
 
 
 
