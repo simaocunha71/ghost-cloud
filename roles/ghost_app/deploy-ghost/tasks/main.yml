@@ -1,9 +1,8 @@
-#https://ghost.org/docs/ghost-cli/
 ---
+#Ghost deployment
 
 - name: Update mysql-deployment mysql credentials
   template: src=templates/ghost-deployment.yml dest=roles/ghost_app/deploy-ghost/kubernets/ghost-deployment.yml
-
 
 - name: Deploy Ghost
   kubernetes.core.k8s:
@@ -11,14 +10,12 @@
     src: kubernets/ghost-deployment.yml
     wait: true
 
-  
 
 - name: Expose Ghost service
   kubernetes.core.k8s:
     state: present
     src: kubernets/ghost-service.yml
     wait: true
-
 
 
 - name: Get MySQL Pod Name
@@ -29,15 +26,13 @@
     wait: true
   register: mysql_pod
 
-- debug:
-    var: "{{sql_user}}"
 
 - name: Wait for users table to be created
   kubernetes.core.k8s_exec:
     namespace: ascn-cluster
     pod: "{{ mysql_pod.resources[0].metadata.name }}"
     container: mysql
-    command: mysql --user=userexample --password=passwordexample --database=ghost -t --execute="select * from users"
+    command: mysql --user={{sql_user}} --password={{sql_pass}} --database=ghost -t --execute="select * from users"
   register: result
   until: "result.stdout != ''"
   retries: 10 #tabelas podem ainda estar a ser criadas 

@@ -1,4 +1,6 @@
 ---
+# Playbook to create k8 namespace
+
 - name: create k8 namespace
   kubernetes.core.k8s:
     state: present

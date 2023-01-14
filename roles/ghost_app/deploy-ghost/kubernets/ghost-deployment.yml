@@ -33,7 +33,7 @@ spec:
         - name: database__connection__host
           value: mysql-service 
         - name: url 
-          value: http://34.170.199.216:80
+          value: http://34.135.242.31:80
         - name: mail__transport
           value: SMTP
         - name: mail__options__service
@@ -45,9 +45,9 @@ spec:
         - name: mail__options__secure
           value: "false"
         - name: mail__options__auth__user
-          value: "eeeaa0e6c2f6b2"
+          value: "7f3a187b220c21"
         - name: mail__options__auth__pass
-          value: "4fed9c0f437876"
+          value: "d023ffa0bd4a97"
         ports:
         - containerPort: 2368
   

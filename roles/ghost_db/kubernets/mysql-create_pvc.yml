@@ -1,4 +1,6 @@
 ---
+# Creation of PVC (Persistent Volume Claim)
+
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
