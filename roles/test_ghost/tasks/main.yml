@@ -12,3 +12,167 @@
   until: result.status == 200
   retries: 3
   delay: 5
+
+
+- name: Fact - num_threads = 1
+  ansible.builtin.set_fact:
+    num_threads: 1
+
+- name: Updating tempalte - admin page with 1 thread
+  template: src=templates/admin_test dest=jmeter/testes/admin_test.jmx
+
+- name: Updating tempalte - login admin with 1 thread
+  template: src=templates/login_admin dest=jmeter/testes/login_admin.jmx
+
+- name: Updating tempalte - create post with 1 thread
+  template: src=templates/create_post dest=jmeter/testes/create_post.jmx
+
+- name: Updating tempalte - sign up with 1 thread
+  template: src=templates/sign_up dest=jmeter/testes/sign_up.jmx
+
+
+- name: Test access admin - 1 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/admin_test.jmx -l jmeter/resultados/admin_page_1.out"
+  async: 120
+  poll: 5
+
+- name: Test login admin - 1 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/login_admin.jmx -l jmeter/resultados/admin_login_1.out"
+  async: 120
+  poll: 5
+
+- name: Test create post - 1 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/create_post.jmx -l jmeter/resultados/create_post_1.out"
+  async: 120
+  poll: 5
+
+- name: Test sign up - 1 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/sign_up.jmx -l jmeter/resultados/sign_up_1.out"
+  async: 120
+  poll: 5
+
+
+
+
+- name: Fact - num_threads = 10
+  ansible.builtin.set_fact:
+    num_threads: 10
+
+- name: Updating tempalte - admin page with 10 thread
+  template: src=templates/admin_test dest=jmeter/testes/admin_test.jmx
+
+- name: Updating tempalte - login admin with 10 thread
+  template: src=templates/login_admin dest=jmeter/testes/login_admin.jmx
+
+- name: Updating tempalte - create post with 10 thread
+  template: src=templates/create_post dest=jmeter/testes/create_post.jmx
+
+- name: Updating tempalte - sign up with 10 thread
+  template: src=templates/sign_up dest=jmeter/testes/sign_up.jmx
+
+
+- name: Test access admin - 10 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/admin_test.jmx -l jmeter/resultados/admin_page_10.out"
+  async: 120
+  poll: 5
+
+- name: Test login admin - 10 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/login_admin.jmx -l jmeter/resultados/admin_login_10.out"
+  async: 120
+  poll: 5
+
+- name: Test create post - 10 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/create_post.jmx -l jmeter/resultados/create_post_10.out"
+  async: 120
+  poll: 5
+
+- name: Test sign up - 10 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/sign_up.jmx -l jmeter/resultados/sign_up_10.out"
+  async: 120
+  poll: 5
+
+
+
+
+
+- name: Fact - num_threads = 100
+  ansible.builtin.set_fact:
+    num_threads: 100
+
+- name: Updating tempalte - admin page with 100 thread
+  template: src=templates/admin_test dest=jmeter/testes/admin_test.jmx
+
+- name: Updating tempalte - login admin with 100 thread
+  template: src=templates/login_admin dest=jmeter/testes/login_admin.jmx
+
+- name: Updating tempalte - create post with 100 thread
+  template: src=templates/create_post dest=jmeter/testes/create_post.jmx
+
+- name: Updating tempalte - sign up with 100 thread
+  template: src=templates/sign_up dest=jmeter/testes/sign_up.jmx
+
+
+- name: Test access admin - 100 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/admin_test.jmx -l jmeter/resultados/admin_page_100.out"
+  async: 300
+  poll: 20
+
+- name: Test login admin - 100 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/login_admin.jmx -l jmeter/resultados/admin_login_100.out"
+  async: 300
+  poll: 20
+
+- name: Test create post - 100 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/create_post.jmx -l jmeter/resultados/create_post_100.out"
+  async: 300
+  poll: 20
+
+- name: Test sign up - 100 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/sign_up.jmx -l jmeter/resultados/sign_up_100.out"
+  async: 300
+  poll: 20
+
+
+
+
+
+
+
+
+
+- name: Fact - num_threads = 1000
+  ansible.builtin.set_fact:
+    num_threads: 1000
+
+- name: Updating tempalte - admin page with 1000 thread
+  template: src=templates/admin_test dest=jmeter/testes/admin_test.jmx
+
+- name: Updating tempalte - login admin with 1000 thread
+  template: src=templates/login_admin dest=jmeter/testes/login_admin.jmx
+
+- name: Updating tempalte - create post with 1000 thread
+  template: src=templates/create_post dest=jmeter/testes/create_post.jmx
+
+- name: Updating tempalte - sign up with 1000 thread
+  template: src=templates/sign_up dest=jmeter/testes/sign_up.jmx
+
+
+- name: Test access admin - 1000 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/admin_test.jmx -l jmeter/resultados/admin_page_1000.out"
+  async: 300
+  poll: 30
+
+- name: Test login admin - 1000 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/login_admin.jmx -l jmeter/resultados/admin_login_1000.out"
+  async: 300
+  poll: 30
+
+- name: Test create post - 1000 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/create_post.jmx -l jmeter/resultados/create_post_1000.out"
+  async: 300
+  poll: 30
+
+- name: Test sign up - 1000 thread
+  shell: "./jmeter/bin/jmeter -n -t jmeter/testes/sign_up.jmx -l jmeter/resultados/sign_up_1000.out"
+  async: 300
+  poll: 30

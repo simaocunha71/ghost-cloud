@@ -1,4 +1,3 @@
----
 # Playbook to deploy Ghost and its components
 
 - name: Create namespace

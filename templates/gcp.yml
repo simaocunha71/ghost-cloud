@@ -8,7 +8,6 @@ all:
   gcp_cred_file: credentials.json    # Path to service account keys (json file downloaded from GCP)
 
   gcp_zone: us-central1-a
-  gcp_region: europe-west1
   gcp_image_type: ubuntu_containerd
   gcp_machine_type: e2-medium          # Can be changed if necessary
   gcp_disk_size_gb: 100                # Can be changed if necessary
@@ -20,6 +19,3 @@ all:
   ghost_ip: {{ new_ghost_ip }}   # Needs to be updated
   ghost_port: 80         # Needs to be updated
   ghost_url: https://{{ new_ghost_ip }}:80
-
-  # Additional variables
-  # ...

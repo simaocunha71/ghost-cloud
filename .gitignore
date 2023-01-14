@@ -1,3 +1,6 @@
 credentials.json
 jmeter/backups/*
 jmeter/bin/jmeter.log
+*.out
+*.log
+jmeter/bin/jmeter.log
