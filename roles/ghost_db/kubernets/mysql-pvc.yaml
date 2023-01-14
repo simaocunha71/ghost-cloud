@@ -1,5 +1,5 @@
 ---
-# Persistent Volume Claim for MySQL pod - ADAPTAR
+# Persistent Volume Claim for MySQL pod
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:

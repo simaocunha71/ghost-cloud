@@ -1,4 +1,6 @@
 ---
+#k8 namespace creation
+
 kind: Namespace
 apiVersion: v1
 metadata:

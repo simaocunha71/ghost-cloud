@@ -1,9 +1,8 @@
-#https://ghost.org/docs/ghost-cli/
 ---
+#Ghost deployment
 
 - name: Update mysql-deployment mysql credentials
   template: src=templates/ghost-deployment.yml dest=roles/ghost_app/deploy-ghost/kubernets/ghost-deployment.yml
-
 
 - name: Deploy Ghost
   kubernetes.core.k8s:
@@ -11,14 +10,12 @@
     src: kubernets/ghost-deployment.yml
     wait: true
 
-  
 
 - name: Expose Ghost service
   kubernetes.core.k8s:
     state: present
     src: kubernets/ghost-service.yml
     wait: true
-
 
 
 - name: Get MySQL Pod Name

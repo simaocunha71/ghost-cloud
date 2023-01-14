@@ -1,4 +1,6 @@
 ---
+#Ghost undeployment
+
 - name: Get MySQL Deployment Name
   kubernetes.core.k8s_info:
     kind: Deployment

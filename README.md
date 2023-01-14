@@ -17,14 +17,11 @@ ansible-playbook create-gke-cluster.yml -i inventory/gcp.yml
 ```
 ansible-playbook destroy-gke-cluster.yml -i inventory/gcp.yml
 ```
-* Aceder ao cluster no terminal
-```
-gcloud container clusters get-credentials ascn-cluster --zone europe-west1-b --project ascn-grupo21
-```
-```
-kubectl get all
-```
 * Deploy Ghost
 ```
 ansible-playbook deploy-ghost.yml -i inventory/gcp.yml -e @mail_cred.enc --ask-vault-pass
+```
+* Uneploy Ghost
+```
+ansible-playbook undeploy-ghost.yml -i inventory/gcp.yml
 ```

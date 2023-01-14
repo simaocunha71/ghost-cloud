@@ -1,5 +1,5 @@
 ---
-# Deployment for MySQL - ADAPTAR
+# Deployment for MySQL
 apiVersion: apps/v1
 kind: Deployment
 metadata:

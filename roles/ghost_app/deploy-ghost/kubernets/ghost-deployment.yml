@@ -1,6 +1,7 @@
-#https://ghost.org/docs/ghost-cli/
 ---
-
+#Ghost deployment
+#Useful links:
+#-> https://ghost.org/docs/ghost-cli/
 apiVersion: apps/v1
 kind: Deployment
 metadata:
