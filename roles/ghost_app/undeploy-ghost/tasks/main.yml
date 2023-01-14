@@ -26,8 +26,6 @@
     state: absent
     wait: true
 
-- debug:
-    var: mysql_deploy
 
 - name: Undeploy MySQL Deployment
   k8s:

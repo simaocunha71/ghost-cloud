@@ -13,6 +13,7 @@
   retries: 3
   delay: 5
 
+#Teste de funcionalidades, múltiplas threads
 
 - name: Fact - num_threads = 1
   ansible.builtin.set_fact:

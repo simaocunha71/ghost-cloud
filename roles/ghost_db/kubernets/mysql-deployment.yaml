@@ -1,5 +1,5 @@
 ---
-# Deployment for MySQL - ADAPTAR
+# Deployment for MySQL
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,7 +23,7 @@ spec:
       containers:
       - name: mysql
         image: mysql:latest
-        env: # The variables below could be set on a ConfigMap object
+        env:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
           value: "true"
         - name: MYSQL_DATABASE

@@ -1,4 +1,5 @@
-#https://ghost.org/docs/ghost-cli/
+#Installation and configuration of ghost deployment 
+#following https://ghost.org/docs/ghost-cli/
 ---
 
 apiVersion: apps/v1
@@ -23,7 +24,7 @@ spec:
       containers:
       - name: ghost
         image: ghost:5.14.1
-        env: # The variables below could be set on a ConfigMap object
+        env: 
         - name: database__connection__database 
           value: ghost
         - name: database__connection__user
